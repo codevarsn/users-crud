@@ -12,13 +12,18 @@ const todoRouter = require('./routes/todo.routes'); //importar rutas
 
 require('dotenv').config();
 
+
 //middlewares
 
 app.use(cors());
 
 app.use(express.json()); 
 
-
+app.use(function(req, res, next) {
+    res.setHeader("Content-Security-Policy", "default-src 'self' https://varsan-user-crud-api.onrender.com/ https://www.postman.com/;"); 
+    next();
+  });
+  
 // sincronizacion a bases de datos
 db.authenticate()
     .then(() => console.log("Successful Auth"))
