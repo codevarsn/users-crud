@@ -4,12 +4,13 @@ const cors = require("cors")
 
 const app = express(); 
 
-const PORT = 8000; // puerto de comunicacion
+const PORT = process.env.PORT || 8000; // puerto de comunicacion
 
 const db = require('./utils/database'); //importar coneccion a BD
 
 const todoRouter = require('./routes/todo.routes'); //importar rutas
 
+require('dotenv').config();
 
 //middlewares
 
