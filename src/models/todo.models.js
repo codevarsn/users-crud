@@ -1,6 +1,7 @@
 const { DataTypes } = require('sequelize');
 const db = require('../utils/database');
 
+
 const Todo = db.define('todo_table', {
     id: {
         type: DataTypes.INTEGER,
