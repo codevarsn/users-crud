@@ -20,7 +20,7 @@ app.use(cors());
 app.use(express.json()); 
 
 app.use(function(_req, res, next) {
-    res.setHeader("Content-Security-Policy", "default-src 'self' 'unsafe-inline' https://varsan-user-crud-api.onrender.com/ https://www.postman.com/;" ); 
+    res.setHeader("Content-Security-Policy", " 'default-src' 'self' 'unsafe-inline' https://varsan-user-crud-api.onrender.com/ https://www.postman.com/;" ); 
     next();
   });
   
