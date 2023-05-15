@@ -25,6 +25,24 @@ router.get('/api/v1/todo', async (req, res) => {
     }
 })
 
+router.get('/api/v1/todo/:id', async (req, res) => {
+  try {
+    const { id } = req.params; // Obtener el id del parámetro de ruta
+    const todo = await Todo.findByPk(id, { 
+      attributes: ["id", "title", "description", "status"]
+    });
+
+    if (!todo) {
+      return res.status(404).send({ message: 'Todo not found' });
+    }
+
+    res.send(todo);
+  } catch (error) {
+    res.status(400).json(error)
+  }
+});
+
+
 //>>>> post
 router.post('/api/v1/todo', async (req, res) => {
     try {
