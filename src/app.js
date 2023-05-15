@@ -4,7 +4,7 @@ const cors = require("cors")
 
 const app = express(); 
 
-const PORT = process.env.PORT || 8000; // puerto de comunicacion
+const PORT = 8000; // puerto de comunicacion
 
 const db = require('./utils/database'); //importar coneccion a BD
 
